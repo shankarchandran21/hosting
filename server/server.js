@@ -4,17 +4,13 @@ import connectDB from './db/connectDB.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { v2 as cloudinary } from 'cloudinary';
-import admin from "firebase-admin";
-import credential from "./credential/credential.json" assert { type: "json" };
 import userRoute from "./routes/user.route.js"
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
-admin.initializeApp({
-    credential: admin.credential.cert(credential)
-  });
+
 // Cloudinary Config
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
