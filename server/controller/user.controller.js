@@ -11,7 +11,9 @@ import User from "../models/user.modal.js";
         const existingUser = await User.findOne({ uid });
         if (existingUser) {
            
-          return res.status(200).json({user:existingUser});
+          existingUser.idToken = idToken;
+          const updatedUser = await existingUser.save();
+          return res.status(200).json({ user: updatedUser });
           
         } else {
           const newUser = new User({ idToken, uid, displayName, photoURL, email });
