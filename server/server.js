@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 app.use(cors({ credentials: true, origin: "http://localhost:3000"}));
 app.use(cookieParser());
 
+
 app.use("/api/user",userRoute)
 app.use("/api/task",taskRoute)
 

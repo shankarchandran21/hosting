@@ -5,12 +5,13 @@ import User from "../models/user.modal.js";
     try {
         res.cookie("task",{idToken,uid},{
             httpOnly:true,
+            secure: process.env.NODE_ENV === 'production',
             maxAge:15 * 24 * 60 * 60 * 1000, // 15days
             sameSite:"strict",
         })
         const existingUser = await User.findOne({ uid });
         if (existingUser) {
-           
+          
           existingUser.idToken = idToken;
           const updatedUser = await existingUser.save();
           return res.status(200).json({ user: updatedUser });
