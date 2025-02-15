@@ -21,7 +21,7 @@ cloudinary.config({
 
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
-app.use(cors({ credentials: true, origin: "https://playful-tulumba-f955d4.netlify.app"}));
+app.use(cors({ credentials: true, origin: "https://magenta-halva-c208e9.netlify.app"}));
 app.use(cookieParser());
 
 
