@@ -21,7 +21,7 @@ cloudinary.config({
 
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
-app.use(cors({ credentials: true, origin: "https://magenta-halva-c208e9.netlify.app"}));
+app.use(cors({ credentials: true, origin: "https://dazzling-mochi-5af92b.netlify.app"}));
 app.use(cookieParser());
 
 
