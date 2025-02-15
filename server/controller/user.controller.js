@@ -7,7 +7,7 @@ import User from "../models/user.modal.js";
             httpOnly:true,
             secure: process.env.NODE_ENV === 'production',
             maxAge:15 * 24 * 60 * 60 * 1000, // 15days
-            sameSite:"strict",
+            sameSite: 'None'
         })
         const existingUser = await User.findOne({ uid });
         if (existingUser) {
